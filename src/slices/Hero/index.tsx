@@ -51,6 +51,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           <div className="glass-container mt-16 w-fit">
             <div className="absolute -z-10 inset-0  bg-blue-500/30 blur-2xl filter" />
             <PrismicNextImage
+              alt=""
               className="rounded-lg"
               field={slice.primary.image}
             />

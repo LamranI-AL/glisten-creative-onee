@@ -58,6 +58,7 @@ const ShowCase = ({ slice }: ShowCaseProps): JSX.Element => {
         </div>
 
         <PrismicNextImage
+          alt=""
           field={slice.primary.image}
           className={clsx(
             "opacity-90 shadow-2xl lg:col-span-2 lg:pt-0",
