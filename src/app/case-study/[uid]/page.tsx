@@ -25,7 +25,7 @@ export default async function Page({ params }: { params: Params }) {
           <PrismicText field={page.data.company} />
           <p className="text-lg text-yellow-500">Case Study</p>
         </h1>
-        <p className="mb-4 mt-8 max-w-xl text-lg text-slate-300 text-center">
+        <p className="mb-4 mt-8 max-w-xl text-lg text-slate-300">
           <PrismicText field={page.data.description} />
         </p>
         <PrismicNextImage

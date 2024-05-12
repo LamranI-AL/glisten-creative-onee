@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 // If loading a variable font, you don't need to specify the font weight
-const DmSans = DM_Sans({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-dm-sans",
@@ -18,13 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={DmSans.className}>
-      <body className="bg-[#070815] text-white">
+    <html lang="en" className={dmSans.variable}>
+      <body className="grid bg-[#070815] text-white">
         <Header />
-        {children}
+        <main>{children}</main>
         <Footer />
+        <PrismicPreview repositoryName={repositoryName} />
       </body>
-      <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
 }

@@ -1,5 +1,5 @@
 import Bounded from "@/components/Bounded";
-import { asText, Content } from "@prismicio/client";
+import { Content, asText } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import {
   PrismicRichText,
@@ -16,14 +16,12 @@ export type BentoProps = SliceComponentProps<Content.BentoSlice>;
 /**
  * Component for "Bento" Slices.
  */
-
 const Bento = ({ slice }: BentoProps): JSX.Element => {
   return (
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      {/* <PrismicRichText field={slice.primary.heading} /> */}
       <PrismicRichText
         field={slice.primary.heading}
         components={{
@@ -39,19 +37,11 @@ const Bento = ({ slice }: BentoProps): JSX.Element => {
           ),
         }}
       />
-      {/* <PrismicRichText field={slice.primary.body} /> */}
+
       <div className="mx-auto mt-6 max-w-md text-balance text-center text-slate-300">
         <PrismicRichText field={slice.primary.body} />
       </div>
-      {/* {slice.items.map((item) => {
-        return (
-          <div className="glass-container" key={asText(item.title)}>
-            <PrismicRichText field={item.title} />
-            <PrismicRichText field={item.body} />
-            <PrismicNextImage field={item.image} />
-          </div>
-        );
-      })} */}
+
       <div className="mt-16 grid max-w-4xl grid-rows-[auto_auto_auto] gap-8 md:grid-cols-3 md:gap-10">
         {slice.items.map((item) => (
           <div
@@ -67,11 +57,7 @@ const Bento = ({ slice }: BentoProps): JSX.Element => {
             <div className="max-w-md text-balance text-slate-300">
               <PrismicRichText field={item.body} />
             </div>
-            <PrismicNextImage
-              alt=""
-              field={item.image}
-              className="max-h-36 w-auto"
-            />
+            <PrismicNextImage field={item.image} className="max-h-36 w-auto" />
           </div>
         ))}
       </div>

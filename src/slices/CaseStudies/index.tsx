@@ -24,7 +24,6 @@ const CaseStudies = async ({
 
   const caseStudies = await Promise.all(
     slice.items.map(async (item) => {
-      console.log(item);
       if (isFilled.contentRelationship(item.case_study)) {
         return await client.getByID<Content.CaseStudyDocument>(
           item.case_study.id
@@ -42,9 +41,9 @@ const CaseStudies = async ({
         <PrismicText field={slice.primary.heading} />
       </h2>
 
-      {/* <div className="mx-auto mt-6 max-w-md text-balance text-center text-slate-300">
-        <PrismicRichText field={slice.primary.body} />
-      </div> */}
+      <div className="mx-auto mt-6 max-w-md text-balance text-center text-slate-300">
+        {/* <PrismicRichText field={slice.primary.body} /> */}
+      </div>
 
       <div className="mt-20 grid gap-16">
         {caseStudies.map(
@@ -71,7 +70,6 @@ const CaseStudies = async ({
                   </PrismicNextLink>
                 </div>
                 <PrismicNextImage
-                  alt=""
                   field={caseStudy.data.logo_image}
                   quality={100}
                   sizes="(max-width: 768px) 100vw, 50vw"
