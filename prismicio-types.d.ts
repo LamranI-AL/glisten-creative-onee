@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type CaseStudyDocumentDataSlicesSlice = HeroSlice | RichTextSlice;
+type CaseStudyDocumentDataSlicesSlice = AuthSlice | HeroSlice | RichTextSlice;
 
 /**
  * Content for Case Study documents
@@ -103,6 +103,7 @@ export type CaseStudyDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | AuthSlice
   | CallToActionSlice
   | IntegrationsSlice
   | CaseStudiesSlice
@@ -286,6 +287,78 @@ export type AllDocumentTypes =
   | CaseStudyDocument
   | PageDocument
   | SettingsDocument;
+
+/**
+ * Primary content in *Auth → Primary*
+ */
+export interface AuthSliceDefaultPrimary {
+  /**
+   * Heading field in *Auth → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: auth.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * Body field in *Auth → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: auth.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Button text field in *Auth → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: auth.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Auth → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: auth.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for Auth Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AuthSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AuthSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Auth*
+ */
+type AuthSliceVariation = AuthSliceDefault;
+
+/**
+ * Auth Shared Slice
+ *
+ * - **API ID**: `auth`
+ * - **Description**: Auth
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AuthSlice = prismic.SharedSlice<"auth", AuthSliceVariation>;
 
 /**
  * Primary content in *Bento → Primary*
@@ -922,6 +995,10 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       AllDocumentTypes,
+      AuthSlice,
+      AuthSliceDefaultPrimary,
+      AuthSliceVariation,
+      AuthSliceDefault,
       BentoSlice,
       BentoSliceDefaultPrimary,
       BentoSliceDefaultItem,
