@@ -65,8 +65,8 @@ const CaseStudies = async ({
                     document={caseStudy}
                     className="after:absolute after:inset-0 hover:underline"
                   >
-                    Read <PrismicText field={caseStudy.data.company} /> case
-                    study
+                    Découvrez davantage à propos de notre{" "}
+                    <PrismicText field={caseStudy.data.company} />
                   </PrismicNextLink>
                 </div>
                 <PrismicNextImage

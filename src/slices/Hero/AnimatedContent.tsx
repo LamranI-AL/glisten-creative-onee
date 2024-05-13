@@ -88,8 +88,8 @@ export default function AnimatedContent({
         </ButtonLink>
       )}
       {isFilled.image(slice.primary.image) && (
-        <div className="hero__image glass-container mt-16 w-fit opacity-0">
-          <div className="hero__glow absolute inset-0 -z-10 bg-blue-500/30 opacity-0 blur-2xl filter" />
+        <div className="hero__image glass-container mt-16 w-fit opacity-0 lg:w-2/4 lg:ml-72">
+          <div className="hero__glow absolute inset-0 -z-10 bg-blue-500/30  opacity-0 blur-2xl filter" />
           <PrismicNextImage
             className="rounded-lg"
             field={slice.primary.image}

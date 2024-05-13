@@ -1,5 +1,4 @@
 "use client";
-
 import { Content } from "@prismicio/client";
 import React from "react";
 import { useRef } from "react";
@@ -8,11 +7,14 @@ import { useGSAP } from "@gsap/react";
 import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 import StylizedLogoMark from "./StylizedLogoMark";
 import clsx from "clsx";
-
 import {
   FaDigitalOcean,
   FaCloudflare,
   FaNpm,
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedin,
   FaGithub,
   FaFigma,
   FaFly,
@@ -28,10 +30,10 @@ export default function AnimatedContent({
   gsap.registerPlugin(useGSAP);
 
   const icons = {
-    npm: <FaDigitalOcean />,
-    npx: <FaCloudflare />,
-    npmm: <FaNpm />,
-    npmmm: <FaGithub />,
+    npm: <FaFacebook />,
+    npx: <FaInstagram />,
+    npmm: <FaTwitter />,
+    npmmm: <FaLinkedin />,
     nnpm: <FaFigma />,
     nnpmm: <FaFly />,
   };
