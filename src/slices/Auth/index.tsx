@@ -8,7 +8,7 @@ import {
   PrismicLink,
   SliceComponentProps,
 } from "@prismicio/react";
-import { useEffect, useRef } from "react";
+import { FormEvent, useEffect, useRef } from "react";
 import axios, { AxiosError } from "axios";
 
 export type AuthProps = SliceComponentProps<Content.AuthSlice>;
@@ -19,27 +19,34 @@ const Auth = ({ slice }: AuthProps): JSX.Element => {
     console.log(nameRef);
   }, []);
 
-  const nameRef = useRef("");
-  const emailRef = useRef("");
-  const phoneRef = useRef("");
-  const eventDescriptionRef = useRef("");
-  const handelclick = (e: MouseEvent) => {
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const phoneRef = useRef<HTMLInputElement>(null);
+  const eventDescriptionRef = useRef<HTMLInputElement>(null);
+  const handelclick = (e: FormEvent) => {
     e.preventDefault();
-    alert("hello");
-    axios
-      .post("https://quark-api-ensabm.vercel.app/CreatMessage", {
-        name: nameRef.current.value,
-        email: emailRef.current.value,
-        age: phoneRef.current.value,
-        message: eventDescriptionRef.current.value,
-      })
-      .then(() => {
-        console.log("all is okuu");
-      })
-      .catch((error: AxiosError) => {
-        console.log(error.message);
-      });
-    console.log(nameRef.current.value, eventDescriptionRef.current.value);
+    if (
+      nameRef.current &&
+      emailRef.current &&
+      phoneRef.current &&
+      eventDescriptionRef.current
+    ) {
+      axios
+        .post("https://quark-api-ensabm.vercel.app/CreatMessage", {
+          name: nameRef.current.value,
+          email: emailRef.current.value,
+          age: phoneRef.current.value,
+          message: eventDescriptionRef.current.value,
+        })
+        .then(() => {
+          console.log("all is okuu");
+        })
+        .catch((error: AxiosError) => {
+          console.log(error.message);
+        });
+    } else {
+      console.error("One or more refs are null");
+    }
   };
   return (
     <Bounded
