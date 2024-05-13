@@ -9,6 +9,7 @@ import WordMark from "@/components/WordMark";
 import { MdMenu, MdClose } from "react-icons/md";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import { UserButton, useUser } from "@clerk/nextjs";
 
 type NavBarProps = {
   settings: Content.SettingsDocument;
@@ -17,6 +18,7 @@ type NavBarProps = {
 export default function NavBar({ settings }: NavBarProps) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const user = useUser();
 
   return (
     <nav className="md-:py-6 px-4 py-4 md:px-6" aria-label="Main">
@@ -24,7 +26,7 @@ export default function NavBar({ settings }: NavBarProps) {
         <div className="flex items-center justify-between">
           <Link href="/" className="z-50" onClick={() => setOpen(false)}>
             <WordMark />
-            <span className="sr-only">Glisten.ai Home Page</span>
+            <span className="sr-only">quark event Home Page</span>
           </Link>
           <button
             type="button"
@@ -54,6 +56,7 @@ export default function NavBar({ settings }: NavBarProps) {
           </button>
 
           <div className="grid justify-items-end gap-8">
+            {/* <UserButton /> */}
             {settings.data.navigation.map((item) => {
               if (item.cta_button) {
                 return (
@@ -92,6 +95,8 @@ export default function NavBar({ settings }: NavBarProps) {
 
         {/* Desktop Nav */}
         <ul className=" hidden gap-6 md:flex">
+          {user && <UserButton />}
+
           {settings.data.navigation.map((item) => {
             if (item.cta_button) {
               return (

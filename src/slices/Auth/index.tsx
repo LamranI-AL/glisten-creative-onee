@@ -10,6 +10,7 @@ import {
 } from "@prismicio/react";
 import { FormEvent, useEffect, useRef } from "react";
 import axios, { AxiosError } from "axios";
+// import { UserButton } from "@clerk/nextjs";
 
 export type AuthProps = SliceComponentProps<Content.AuthSlice>;
 
