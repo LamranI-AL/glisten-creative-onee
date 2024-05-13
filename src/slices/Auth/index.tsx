@@ -9,7 +9,7 @@ import {
   SliceComponentProps,
 } from "@prismicio/react";
 import { useEffect, useRef } from "react";
-import Axios, { AxiosError } from "Axios";
+import axios, { AxiosError } from "axios";
 
 export type AuthProps = SliceComponentProps<Content.AuthSlice>;
 
@@ -26,12 +26,13 @@ const Auth = ({ slice }: AuthProps): JSX.Element => {
   const handelclick = (e: MouseEvent) => {
     e.preventDefault();
     alert("hello");
-    Axios.post("https://quark-api-ensabm.vercel.app/CreatMessage", {
-      name: nameRef.current.value,
-      email: emailRef.current.value,
-      age: phoneRef.current.value,
-      message: eventDescriptionRef.current.value,
-    })
+    axios
+      .post("https://quark-api-ensabm.vercel.app/CreatMessage", {
+        name: nameRef.current.value,
+        email: emailRef.current.value,
+        age: phoneRef.current.value,
+        message: eventDescriptionRef.current.value,
+      })
       .then(() => {
         console.log("all is okuu");
       })
