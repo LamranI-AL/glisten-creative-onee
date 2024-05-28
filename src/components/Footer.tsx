@@ -11,7 +11,7 @@ export default async function Footer() {
     <footer className="flex flex-col items-center justify-between gap-6 border-t border-slate-600 px-8 py-7 md:flex-row">
       <Link href="/">
         <WordMark />
-        <span className="sr-only">Glisten.ai Home Page</span>
+        <span className="sr-only"> Home Page</span>
       </Link>
       <nav aria-label="Footer">
         <ul className="flex gap-6">
