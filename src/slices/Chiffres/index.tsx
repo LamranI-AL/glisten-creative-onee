@@ -36,9 +36,12 @@ const Chiffres = ({ slice }: ChiffresProps): JSX.Element => {
 
         <div className="mt-8 sm:mt-12">
           <dl className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:divide-x sm:divide-gray-100 dark:sm:divide-gray-800">
-            {slice.items.map((item) => {
+            {slice.items.map((item, index) => {
               return (
-                <div className="flex flex-col px-4 py-8 text-center">
+                <div
+                  className="flex flex-col px-4 py-8 text-center"
+                  key={index}
+                >
                   <dt className="order-last text-lg font-medium text-gray-500 dark:text-gray-400">
                     <PrismicRichText field={item.chiffretexte} />
                     {/* Official Addons */}

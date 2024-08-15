@@ -29,9 +29,12 @@ const Services = ({ slice }: ServicesProps): JSX.Element => {
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
-          {slice.items.map((item) => {
+          {slice.items.map((item, index) => {
             return (
-              <div className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-blue-500/10 hover:shadow-blue-500/10">
+              <div
+                className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-blue-500/10 hover:shadow-blue-500/10"
+                key={index}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="size-10 text-blue-950"

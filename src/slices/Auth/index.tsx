@@ -141,31 +141,31 @@ const Auth = ({ slice }: AuthProps): JSX.Element => {
                   className="hover:bg-slate-300 hover:text-slate-900"
                   value="event-scolaire"
                 >
-                  évènement scolaire
+                  {`évènement scolaire`}
                 </SelectItem>
                 <SelectItem
                   className="hover:bg-slate-300 hover:text-slate-900"
                   value="anniversaire"
                 >
-                  anniversaire
+                  {`anniversaire`}
                 </SelectItem>
                 <SelectItem
                   className="hover:bg-slate-300 hover:text-slate-900 "
                   value="soutenance"
                 >
-                  soutenance
+                  {`soutenance`}
                 </SelectItem>
                 <SelectItem
                   className="hover:bg-slate-300 hover:text-slate-900 "
                   value="fetes"
                 >
-                  fêtes
+                  {`fêtes`}
                 </SelectItem>
                 <SelectItem
                   className="hover:bg-slate-300 hover:text-slate-900 "
                   value="soiree"
                 >
-                  soirée
+                  {`soirée`}
                 </SelectItem>
               </SelectGroup>
             </SelectContent>
@@ -173,7 +173,7 @@ const Auth = ({ slice }: AuthProps): JSX.Element => {
 
           <div className="flex items-center justify-between">
             <p className="text-sm text-gray-500">
-              Plus d'informations?
+              {`Plus d'informations?`}
               {/* <a className="underline" href="#"> */}
               <Link
                 className="underline"

@@ -119,8 +119,7 @@ const ReserveSection = ({ slice }: ReserveSectionProps): JSX.Element => {
 
           <div className="flex items-center justify-between">
             <p className="text-sm text-gray-500">
-              Plus d'informations?
-              {/* <a className="underline" href="#"> */}
+              {`Plus d'informations?`}
               <Link
                 className="underline"
                 href={"https://www.instagram.com/quark.ensabm"}
@@ -135,12 +134,6 @@ const ReserveSection = ({ slice }: ReserveSectionProps): JSX.Element => {
           </div>
         </form>
       </div>
-      {/* <div className="grid grid-cols-1 lg:grid-cols-3 ">
-        <div className="p-6 rounded-lg shadow-md">
-          <h2 className="text-lg font-bold mb-4">Mes reservations</h2>
-          <ul></ul>
-        </div>
-      </div> */}
       <ReservationList />
     </Bounded>
   );

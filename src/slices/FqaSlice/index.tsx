@@ -16,9 +16,9 @@ const FqaSlice = ({ slice }: FqaSliceProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      {slice.items.map((item) => {
+      {slice.items.map((item, index) => {
         return (
-          <div className="space-y-4 m-1 w-full">
+          <div className="space-y-4 m-1 w-full" key={index}>
             <details className="group [&_summary::-webkit-details-marker]:hidden">
               <summary className=" flex w-full  cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900 dark:bg-slate-900 dark:text-white">
                 <div className="font-medium">
