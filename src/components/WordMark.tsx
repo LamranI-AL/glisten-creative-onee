@@ -1,9 +1,9 @@
 import Image from "next/image";
-import logo from "./logo.png";
+import logo from "./quarkevents1.png";
 
 export default function WordMark() {
   return (
-    <div className="size-14">
+    <div className="size-32">
       <Image alt="" src={logo} />
     </div>
   );

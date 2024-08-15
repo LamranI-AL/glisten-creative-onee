@@ -69,7 +69,7 @@ export default function AnimatedContent({
     <div className="relative" ref={container}>
       <StarGrid />
       {isFilled.richText(slice.primary.heading) && (
-        <h1 className="hero__heading text-balance text-5xl font-medium opacity-0 md:text-7xl">
+        <h1 className="hero__heading text-balance text-5xl text-slate-300 font-medium opacity-0 md:text-7xl">
           <PrismicText field={slice.primary.heading} />
         </h1>
       )}
@@ -91,6 +91,7 @@ export default function AnimatedContent({
         <div className="hero__image glass-container mt-16 w-fit opacity-0 lg:w-2/4 lg:ml-72">
           <div className="hero__glow absolute inset-0 -z-10 bg-blue-500/30  opacity-0 blur-2xl filter" />
           <PrismicNextImage
+            alt=""
             className="rounded-lg"
             field={slice.primary.image}
             priority

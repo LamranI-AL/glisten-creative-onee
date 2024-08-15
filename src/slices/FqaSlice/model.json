@@ -1,0 +1,37 @@
+{
+  "id": "fqa_slice",
+  "type": "SharedSlice",
+  "name": "FqaSlice",
+  "description": "FqaSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "question": {
+          "type": "StructuredText",
+          "config": {
+            "label": "question",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "reponse": {
+          "type": "StructuredText",
+          "config": {
+            "label": "réponse",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        }
+      }
+    }
+  ]
+}

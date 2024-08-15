@@ -10,6 +10,7 @@ import { MdMenu, MdClose } from "react-icons/md";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { UserButton, useUser } from "@clerk/nextjs";
+// import { ModeToggle } from "./mode-toggle";
 
 type NavBarProps = {
   settings: Content.SettingsDocument;
@@ -22,7 +23,7 @@ export default function NavBar({ settings }: NavBarProps) {
 
   return (
     <nav className="md-:py-6 px-4 py-4 md:px-6" aria-label="Main">
-      <div className="mx-auto flex max-w-6xl flex-col justify-between py-2 font-medium text-white md:flex-row md:items-center">
+      <div className="mx-auto flex max-w-6xl flex-col justify-between py-2 font-medium  md:flex-row md:items-center">
         <div className="flex items-center justify-between">
           <Link href="/" className="z-50" onClick={() => setOpen(false)}>
             <WordMark />
@@ -30,7 +31,7 @@ export default function NavBar({ settings }: NavBarProps) {
           </Link>
           <button
             type="button"
-            className="block p-2 text-3xl text-white md:hidden"
+            className="block p-2 text-3xl md:hidden"
             aria-expanded={open}
             onClick={() => setOpen(true)}
           >
@@ -55,7 +56,7 @@ export default function NavBar({ settings }: NavBarProps) {
             <span className="sr-only">Close menu</span>
           </button>
 
-          <div className="grid justify-items-end gap-8">
+          <div className="grid justify-items-end text-slate-300  gap-8">
             {/* <UserButton /> */}
             {settings.data.navigation.map((item) => {
               if (item.cta_button) {
@@ -77,7 +78,7 @@ export default function NavBar({ settings }: NavBarProps) {
               return (
                 <PrismicNextLink
                   key={item.label}
-                  className="block px-3 text-3xl first:mt-8"
+                  className="block px-3 text-3xl text-slate-300 first:mt-8"
                   field={item.link}
                   onClick={() => setOpen(false)}
                   aria-current={
@@ -94,7 +95,7 @@ export default function NavBar({ settings }: NavBarProps) {
         </div>
 
         {/* Desktop Nav */}
-        <ul className=" hidden gap-6 md:flex">
+        <ul className=" hidden gap-6 text-slate-300  md:flex">
           {user && <UserButton />}
 
           {settings.data.navigation.map((item) => {

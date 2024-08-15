@@ -19,6 +19,7 @@ import {
   FaFigma,
   FaFly,
 } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function AnimatedContent({
   slice,
@@ -113,12 +114,17 @@ export default function AnimatedContent({
         <React.Fragment key={index}>
           {index === Math.floor(slice.items.length / 2) && (
             <>
-              <StylizedLogoMark />
+              <Link href={"https://www.instagram.com/quark.ensabm"}>
+                <StylizedLogoMark />
+              </Link>
+
               <div className="signal-line rotate-180 bg-gradient-to-t" />
             </>
           )}
           <div className="pulsing-icon flex aspect-square shrink-0 items-center justify-center rounded-full border border-blue-50/30 bg-blue-50/25 p-3 text-3xl text-blue-100 opacity-40 md:text-4xl lg:text-5xl">
-            {item.icon && icons[item.icon]}
+            <Link href={"https://www.instagram.com/quark.ensabm"}>
+              {item.icon && icons[item.icon]}
+            </Link>
           </div>
           {index !== slice.items.length - 1 && (
             <div

@@ -51,7 +51,7 @@ const CaseStudies = async ({
             caseStudy && (
               <div
                 key={caseStudy.id}
-                className="relative grid gap-4 opacity-85 transition-opacity duration-300 hover:cursor-pointer hover:opacity-100 md:grid-cols-2 md:gap-8 lg:grid-cols-3"
+                className="relative grid opacity-85 transition-opacity duration-300 hover:cursor-pointer hover:opacity-100 md:grid-cols-2 md:gap-8 lg:grid-cols-3"
               >
                 <div className="col-span-1 flex flex-col justify-center gap-4">
                   <h3 className="text-4xl">
@@ -70,8 +70,11 @@ const CaseStudies = async ({
                   </PrismicNextLink>
                 </div>
                 <PrismicNextImage
+                  alt=""
                   field={caseStudy.data.logo_image}
                   quality={100}
+                  width={400}
+                  height={400}
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className={clsx(
                     "rounded-xl lg:col-span-2",

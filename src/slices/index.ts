@@ -7,8 +7,12 @@ export const components = {
   bento: dynamic(() => import("./Bento")),
   call_to_action: dynamic(() => import("./CallToAction")),
   case_studies: dynamic(() => import("./CaseStudies")),
+  chiffres: dynamic(() => import("./Chiffres")),
+  fqa_slice: dynamic(() => import("./FqaSlice")),
   hero: dynamic(() => import("./Hero")),
   integrations: dynamic(() => import("./Integrations")),
+  reserve_section: dynamic(() => import("./ReserveSection")),
   rich_text: dynamic(() => import("./RichText")),
+  services: dynamic(() => import("./Services")),
   show_case: dynamic(() => import("./ShowCase")),
 };

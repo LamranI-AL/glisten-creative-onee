@@ -1,0 +1,42 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"question",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Clock"
+									}
+								}
+							]
+						}
+					],
+					[
+						"reponse",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Labore cillum consequat ex magna voluptate sunt Lorem. Non amet deserunt aute nisi mollit commodo id."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

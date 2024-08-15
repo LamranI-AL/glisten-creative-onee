@@ -103,6 +103,10 @@ export type CaseStudyDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ReserveSectionSlice
+  | FqaSliceSlice
+  | ServicesSlice
+  | ChiffresSlice
   | AuthSlice
   | CallToActionSlice
   | IntegrationsSlice
@@ -584,6 +588,141 @@ export type CaseStudiesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Chiffres → Primary*
+ */
+export interface ChiffresSliceDefaultPrimary {
+  /**
+   * Heading field in *Chiffres → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: chiffres.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * subHeading field in *Chiffres → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: chiffres.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading: prismic.TitleField;
+}
+
+/**
+ * Primary content in *Chiffres → Items*
+ */
+export interface ChiffresSliceDefaultItem {
+  /**
+   * chiffre field in *Chiffres → Items*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: chiffres.items[].chiffre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  chiffre: prismic.TitleField;
+
+  /**
+   * chiffreTexte field in *Chiffres → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: chiffres.items[].chiffretexte
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  chiffretexte: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Chiffres Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ChiffresSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ChiffresSliceDefaultPrimary>,
+  Simplify<ChiffresSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Chiffres*
+ */
+type ChiffresSliceVariation = ChiffresSliceDefault;
+
+/**
+ * Chiffres Shared Slice
+ *
+ * - **API ID**: `chiffres`
+ * - **Description**: Chiffres
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ChiffresSlice = prismic.SharedSlice<
+  "chiffres",
+  ChiffresSliceVariation
+>;
+
+/**
+ * Primary content in *FqaSlice → Items*
+ */
+export interface FqaSliceSliceDefaultItem {
+  /**
+   * question field in *FqaSlice → Items*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: fqa_slice.items[].question
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  question: prismic.TitleField;
+
+  /**
+   * réponse field in *FqaSlice → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: fqa_slice.items[].reponse
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  reponse: prismic.RichTextField;
+}
+
+/**
+ * Default variation for FqaSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FqaSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<FqaSliceSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *FqaSlice*
+ */
+type FqaSliceSliceVariation = FqaSliceSliceDefault;
+
+/**
+ * FqaSlice Shared Slice
+ *
+ * - **API ID**: `fqa_slice`
+ * - **Description**: FqaSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FqaSliceSlice = prismic.SharedSlice<
+  "fqa_slice",
+  FqaSliceSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -738,6 +877,61 @@ export type IntegrationsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ReserveSection → Primary*
+ */
+export interface ReserveSectionSliceDefaultPrimary {
+  /**
+   * Heading field in *ReserveSection → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reserve_section.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * subHeading field in *ReserveSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reserve_section.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ReserveSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ReserveSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ReserveSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ReserveSection*
+ */
+type ReserveSectionSliceVariation = ReserveSectionSliceDefault;
+
+/**
+ * ReserveSection Shared Slice
+ *
+ * - **API ID**: `reserve_section`
+ * - **Description**: ReserveSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ReserveSectionSlice = prismic.SharedSlice<
+  "reserve_section",
+  ReserveSectionSliceVariation
+>;
+
+/**
  * Primary content in *RichText → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -780,6 +974,106 @@ type RichTextSliceVariation = RichTextSliceDefault;
 export type RichTextSlice = prismic.SharedSlice<
   "rich_text",
   RichTextSliceVariation
+>;
+
+/**
+ * Primary content in *Services → Primary*
+ */
+export interface ServicesSliceDefaultPrimary {
+  /**
+   * Heading field in *Services → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * subHeading field in *Services → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Services → Items*
+ */
+export interface ServicesSliceDefaultItem {
+  /**
+   * cardTitle field in *Services → Items*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.items[].cardtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  cardtitle: prismic.TitleField;
+
+  /**
+   * cardSubtitle field in *Services → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.items[].cardsubtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  cardsubtitle: prismic.RichTextField;
+
+  /**
+   * icon field in *Services → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.items[].icon
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  icon: prismic.KeyTextField;
+
+  /**
+   * Link field in *Services → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for Services Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServicesSliceDefaultPrimary>,
+  Simplify<ServicesSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Services*
+ */
+type ServicesSliceVariation = ServicesSliceDefault;
+
+/**
+ * Services Shared Slice
+ *
+ * - **API ID**: `services`
+ * - **Description**: Services
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesSlice = prismic.SharedSlice<
+  "services",
+  ServicesSliceVariation
 >;
 
 /**
@@ -1013,6 +1307,15 @@ declare module "@prismicio/client" {
       CaseStudiesSliceDefaultItem,
       CaseStudiesSliceVariation,
       CaseStudiesSliceDefault,
+      ChiffresSlice,
+      ChiffresSliceDefaultPrimary,
+      ChiffresSliceDefaultItem,
+      ChiffresSliceVariation,
+      ChiffresSliceDefault,
+      FqaSliceSlice,
+      FqaSliceSliceDefaultItem,
+      FqaSliceSliceVariation,
+      FqaSliceSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
@@ -1022,10 +1325,19 @@ declare module "@prismicio/client" {
       IntegrationsSliceDefaultItem,
       IntegrationsSliceVariation,
       IntegrationsSliceDefault,
+      ReserveSectionSlice,
+      ReserveSectionSliceDefaultPrimary,
+      ReserveSectionSliceVariation,
+      ReserveSectionSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      ServicesSlice,
+      ServicesSliceDefaultPrimary,
+      ServicesSliceDefaultItem,
+      ServicesSliceVariation,
+      ServicesSliceDefault,
       ShowCaseSlice,
       ShowCaseSliceDefaultPrimary,
       ShowCaseSliceReversePrimary,

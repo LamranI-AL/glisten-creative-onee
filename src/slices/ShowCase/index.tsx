@@ -1,7 +1,7 @@
 import Bounded from "@/components/Bounded";
 import ButtonLink from "@/components/ButtonLink";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import clsx from "clsx";
 import { PiArrowsClockwise, PiGear } from "react-icons/pi";
@@ -11,15 +11,8 @@ const icons = {
   gear: <PiGear />,
   cycle: <PiArrowsClockwise />,
 };
-
-/**
- * Props for `Showcase`.
- */
 export type ShowcaseProps = SliceComponentProps<Content.ShowCaseSlice>;
 
-/**
- * Component for "Showcase" Slices.
- */
 const Showcase = ({ slice }: ShowcaseProps): JSX.Element => {
   return (
     <Bounded
@@ -34,7 +27,7 @@ const Showcase = ({ slice }: ShowcaseProps): JSX.Element => {
           field={slice.primary.heading}
           components={{
             heading2: ({ children }) => (
-              <h2 className="text-balance text-center text-5xl font-medium md:text-7xl">
+              <h2 className="text-balance text-center text-slate-300  text-5xl font-medium md:text-7xl">
                 {children}
               </h2>
             ),
@@ -46,7 +39,7 @@ const Showcase = ({ slice }: ShowcaseProps): JSX.Element => {
           <div className="w-fit rounded-lg bg-blue-500/35 p-4 text-3xl">
             <>{slice.primary.icon && icons[slice.primary.icon]}</>
           </div>
-          <div className="mt-6 text-2xl font-normal">
+          <div className="mt-6 text-2xl font-normal text-slate-300 ">
             <PrismicRichText field={slice.primary.subheading} />
           </div>
 
@@ -60,6 +53,7 @@ const Showcase = ({ slice }: ShowcaseProps): JSX.Element => {
         </div>
 
         <PrismicNextImage
+          alt=""
           field={slice.primary.image}
           className={clsx(
             "opacity-90 shadow-2xl lg:col-span-2  lg:pt-0",

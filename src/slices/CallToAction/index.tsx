@@ -1,6 +1,6 @@
 import { Content } from "@prismicio/client";
 import { PrismicText, SliceComponentProps } from "@prismicio/react";
-import PlainLogo from "./PlainLogo";
+// import PlainLogo from "./PlainLogo";
 import Bounded from "@/components/Bounded";
 import ButtonLink from "@/components/ButtonLink";
 import WordMark from "@/components/WordMark";
@@ -26,7 +26,7 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
         <WordMark />
       </div>
 
-      <div className="mt-8 max-w-xl text-balance text-5xl">
+      <div className="mt-8 max-w-xl text-balance text-5xl text-slate-200">
         <PrismicText field={slice.primary.heading} />
       </div>
 

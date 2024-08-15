@@ -27,6 +27,18 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "reserve_section": {
+              "type": "SharedSlice"
+            },
+            "fqa_slice": {
+              "type": "SharedSlice"
+            },
+            "services": {
+              "type": "SharedSlice"
+            },
+            "chiffres": {
+              "type": "SharedSlice"
+            },
             "auth": {
               "type": "SharedSlice"
             },

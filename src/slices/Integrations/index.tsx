@@ -1,3 +1,4 @@
+"use client";
 import Bounded from "@/components/Bounded";
 import { Content } from "@prismicio/client";
 import {
@@ -27,17 +28,10 @@ const Integrations = ({ slice }: IntegrationsProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="relative overflow-hidden"
     >
-      <Image
-        src={background}
-        alt=""
-        fill
-        className="object-cover"
-        quality={90}
-      />
       <StarBackground />
 
       <div className="relative">
-        <h2 className="mx-auto max-w-2xl text-balance text-center text-5xl font-medium md:text-7xl">
+        <h2 className="mx-auto max-w-2xl text-balance text-slate-300  text-center text-5xl font-medium md:text-7xl">
           <PrismicText field={slice.primary.heading} />
         </h2>
 

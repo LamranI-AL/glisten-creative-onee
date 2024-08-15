@@ -1,0 +1,56 @@
+{
+  "id": "chiffres",
+  "type": "SharedSlice",
+  "name": "Chiffres",
+  "description": "Chiffres",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "subheading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "subHeading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading4"
+          }
+        }
+      },
+      "items": {
+        "chiffre": {
+          "type": "StructuredText",
+          "config": {
+            "label": "chiffre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "chiffretexte": {
+          "type": "StructuredText",
+          "config": {
+            "label": "chiffreTexte",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        }
+      }
+    }
+  ]
+}
