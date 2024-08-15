@@ -21,23 +21,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en" className={dmSans.variable}>
-        <body className="grid bg-[#021526]">
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Toaster position="bottom-left" />
-            <Header />
-            <main>{children}</main>
-            <Footer />
-            <PrismicPreview repositoryName={repositoryName} />
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    // <ClerkProvider>
+    <html lang="en" className={dmSans.variable}>
+      <body className="grid bg-[#021526]">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Toaster position="bottom-left" />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <PrismicPreview repositoryName={repositoryName} />
+        </ThemeProvider>
+      </body>
+      {/* <script
+          async
+          defer
+          src="https://static.cdn.prismic.io/prismic.js?new=true&repo=glisten-creative-onee"
+        ></script> */}
+    </html>
+    // {/* </ClerkProvider> */}
   );
 }
