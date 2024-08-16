@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { reservation } from "@/interfaces/interfaces";
 import { reservationSchema } from "@/schemas/reservationSchema";
-import { useSession } from "@clerk/nextjs";
+// import { useSession } from "@clerk/nextjs";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { InfoIcon, PhoneCall } from "lucide-react";
@@ -17,7 +17,7 @@ export type ReserveSectionProps =
   SliceComponentProps<Content.ReserveSectionSlice>;
 
 const ReserveSection = ({ slice }: ReserveSectionProps): JSX.Element => {
-  const { session } = useSession();
+  // const { session } = useSession();
   // console.log(session?.user?.emailAddresses[0].emailAddress);
   const reserverAction = async (formData: FormData) => {
     const toastId = toast.loading("Waiting...");
@@ -26,7 +26,7 @@ const ReserveSection = ({ slice }: ReserveSectionProps): JSX.Element => {
     const newReservation: reservation | any = {
       name: name,
       phoneNumber: phoneNumber,
-      email: session?.user?.emailAddresses[0].emailAddress ?? "",
+      email: "",
       service: "BTH",
       creatAt: new Date(Date.now()),
     };

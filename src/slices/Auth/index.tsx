@@ -4,7 +4,7 @@ import { Calendar } from "@/components/ui/calendar";
 // import { Calendar } from "@/components/ui/calendar";
 import { reservation } from "@/interfaces/interfaces";
 import { reservationSchema } from "@/schemas/reservationSchema";
-import { useSession } from "@clerk/nextjs";
+// import { useSession } from "@clerk/nextjs";
 import { Content } from "@prismicio/client";
 import {
   PrismicRichText,
@@ -33,7 +33,7 @@ export type AuthProps = SliceComponentProps<Content.AuthSlice>;
 
 const Auth = ({ slice }: AuthProps): JSX.Element => {
   const [date, setDate] = useState<Date | undefined>(new Date(Date.now()));
-  const { session } = useSession();
+  // const { session } = useSession();
   const reserverAction = async (formData: FormData) => {
     const toastId = toast.loading("Waiting...");
     const name = formData.get("name") as string;
@@ -43,7 +43,7 @@ const Auth = ({ slice }: AuthProps): JSX.Element => {
     const newReservation: reservation | any = {
       name: name,
       phoneNumber: phoneNumber,
-      email: session?.user?.emailAddresses[0].emailAddress ?? "",
+      email:  "",
       service: serviceName ?? "no select",
       creatAt: new Date(Date.now()),
     };

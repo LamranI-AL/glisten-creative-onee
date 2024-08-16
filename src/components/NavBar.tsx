@@ -9,7 +9,7 @@ import WordMark from "@/components/WordMark";
 import { MdMenu, MdClose } from "react-icons/md";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
-import { UserButton, useUser } from "@clerk/nextjs";
+// import { UserButton, useUser } from "@clerk/nextjs";
 // import { ModeToggle } from "./mode-toggle";
 
 type NavBarProps = {
@@ -19,7 +19,7 @@ type NavBarProps = {
 export default function NavBar({ settings }: NavBarProps) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const user = useUser();
+  // const user = useUser();
 
   return (
     <nav className="md-:py-6 px-4 py-4 md:px-6" aria-label="Main">
@@ -96,7 +96,7 @@ export default function NavBar({ settings }: NavBarProps) {
 
         {/* Desktop Nav */}
         <ul className=" hidden gap-6 text-slate-300  md:flex">
-          {user && <UserButton />}
+          {/* {user && <UserButton />} */}
 
           {settings.data.navigation.map((item) => {
             if (item.cta_button) {
