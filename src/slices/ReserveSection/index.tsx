@@ -26,7 +26,7 @@ const ReserveSection = ({ slice }: ReserveSectionProps): JSX.Element => {
     const newReservation: reservation | any = {
       name: name,
       phoneNumber: phoneNumber,
-      email: "",
+      email: "emailWaitingClerkOrOthersProviders",
       service: "BTH",
       creatAt: new Date(Date.now()),
     };

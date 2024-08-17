@@ -21,7 +21,7 @@ const Chiffres = ({ slice }: ChiffresProps): JSX.Element => {
     >
       <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="text-3xl font-bold text-gray-900 sm:text-4xl dark:text-white">
+          <div className="text-3xl font-bold text-white">
             <PrismicRichText field={slice.primary.heading} />
             {/* Trusted by eCommerce Businesses */}
           </div>
