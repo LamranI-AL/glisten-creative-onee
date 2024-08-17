@@ -114,7 +114,7 @@ export default function AnimatedContent({
         <React.Fragment key={index}>
           {index === Math.floor(slice.items.length / 2) && (
             <>
-              <Link href={"https://www.instagram.com/quark.ensabm"}>
+              <Link href={"https://www.instagram.com/quark.events"}>
                 <StylizedLogoMark />
               </Link>
 
@@ -122,7 +122,7 @@ export default function AnimatedContent({
             </>
           )}
           <div className="pulsing-icon flex aspect-square shrink-0 items-center justify-center rounded-full border border-blue-50/30 bg-blue-50/25 p-3 text-3xl text-blue-100 opacity-40 md:text-4xl lg:text-5xl">
-            <Link href={"https://www.instagram.com/quark.ensabm"}>
+            <Link href={"https://www.instagram.com/quark.events"}>
               {item.icon && icons[item.icon]}
             </Link>
           </div>

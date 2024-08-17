@@ -122,7 +122,7 @@ const ReserveSection = ({ slice }: ReserveSectionProps): JSX.Element => {
               {`Plus d'informations?`}
               <Link
                 className="underline"
-                href={"https://www.instagram.com/quark.ensabm"}
+                href={"https://www.instagram.com/quark.events"}
               >
                 Voir
               </Link>

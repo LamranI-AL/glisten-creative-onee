@@ -48,7 +48,7 @@ const Chiffres = ({ slice }: ChiffresProps): JSX.Element => {
                   </dt>
 
                   <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">
-                    <Link href={"https://www.instagram.com/p/C3yGv5RLBoM/"}>
+                    <Link href={"https://www.instagram.com/quark.events"}>
                       <PrismicRichText field={item.chiffre} />
                     </Link>
 

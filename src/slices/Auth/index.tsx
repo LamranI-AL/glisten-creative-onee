@@ -43,7 +43,7 @@ const Auth = ({ slice }: AuthProps): JSX.Element => {
     const newReservation: reservation | any = {
       name: name,
       phoneNumber: phoneNumber,
-      email:  "",
+      email: "",
       service: serviceName ?? "no select",
       creatAt: new Date(Date.now()),
     };
@@ -177,7 +177,7 @@ const Auth = ({ slice }: AuthProps): JSX.Element => {
               {/* <a className="underline" href="#"> */}
               <Link
                 className="underline"
-                href={"https://www.instagram.com/quark.ensabm"}
+                href={"https://www.instagram.com/quark.events"}
               >
                 Voir
               </Link>

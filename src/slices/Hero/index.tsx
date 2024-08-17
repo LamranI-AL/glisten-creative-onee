@@ -1,9 +1,9 @@
 import Bounded from "@/components/Bounded";
 import { Content, isFilled } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+// import { PrismicNextImage } from "@prismicio/next";
 import {
-  PrismicRichText,
-  PrismicText,
+  // PrismicRichText,
+  // PrismicText,
   SliceComponentProps,
 } from "@prismicio/react";
 import AnimatedContent from "./AnimatedContent";
