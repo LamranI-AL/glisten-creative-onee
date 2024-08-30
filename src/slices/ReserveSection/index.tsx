@@ -54,7 +54,7 @@ const ReserveSection = ({ slice }: ReserveSectionProps): JSX.Element => {
     } else {
       let errorMsg = "";
       result.error?.issues.forEach((issue) => {
-        errorMsg += issue.path[0] + " : " + issue.message + " . \n";
+        errorMsg += issue.message + " \n";
       });
       // console.log(result.error?.issues, errorMsg);
       toast.dismiss(toastId);
@@ -101,7 +101,7 @@ const ReserveSection = ({ slice }: ReserveSectionProps): JSX.Element => {
 
           <div>
             <label htmlFor="password" className="sr-only">
-              Password
+              phone
             </label>
             <div className="relative">
               <Input

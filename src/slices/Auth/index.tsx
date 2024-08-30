@@ -39,7 +39,7 @@ const Auth = ({ slice }: AuthProps): JSX.Element => {
     const name = formData.get("name") as string;
     const phoneNumber = formData.get("phone") as string;
     const serviceName = formData.get("selectEvent") as string;
-    console.log(serviceName, phoneNumber);
+    // console.log(serviceName, phoneNumber);
     const newReservation: reservation | any = {
       name: name,
       phoneNumber: phoneNumber,
@@ -71,7 +71,7 @@ const Auth = ({ slice }: AuthProps): JSX.Element => {
     } else {
       let errorMsg = "";
       result.error?.issues.forEach((issue) => {
-        errorMsg += issue.path[0] + " : " + issue.message + " . \n";
+        errorMsg += issue.message + " \n";
       });
       toast.dismiss(toastId);
       toast.error(errorMsg);
@@ -199,18 +199,18 @@ const Auth = ({ slice }: AuthProps): JSX.Element => {
         </h2>
       </div>
 
-      <div className="flex justify-center content-center m-4 p-6 my-10">
-        {/* <h2 className="text-balance text-center text-gray-600 content-center text-3xl font-medium md:text-5xl">
+      {/* <div className="flex justify-center content-center m-4 p-6 my-10">
+        <h2 className="text-balance text-center text-gray-600 content-center text-3xl font-medium md:text-5xl">
           Calendrier pour vous aider à trouver la date idéale pour votre
           événement
-        </h2> */}
+        </h2>
         <Calendar
           mode="single"
-          selected={new Date("11-05-2024")}
+          selected={new Date(Date.now())}
           onSelect={setDate}
           className="rounded-md border bg-gray-950"
         />
-      </div>
+      </div> */}
     </Bounded>
   );
 };
