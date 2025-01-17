@@ -19,7 +19,7 @@ type RichTextProps = SliceComponentProps<Content.RichTextSlice>;
 export default function RichText({ slice }: RichTextProps) {
   return (
     <Bounded>
-      <div className="prose prose-invert prose-lg prose-slate">
+      <div className="">
         <PrismicRichText
           field={slice.primary.content}
           components={components}

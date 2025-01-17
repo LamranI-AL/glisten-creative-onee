@@ -1,4 +1,5 @@
 import Bounded from "@/components/Bounded";
+import ButtonLink from "@/components/ButtonLink";
 import { createClient } from "@/prismicio";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
@@ -53,7 +54,7 @@ const CaseStudies = async ({
                 key={caseStudy.id}
                 className="relative grid opacity-85 transition-opacity duration-300 hover:cursor-pointer hover:opacity-100 md:grid-cols-2 md:gap-8 lg:grid-cols-3"
               >
-                <div className="col-span-1 flex flex-col justify-center gap-4">
+                <div className="col-span-1 flex flex-col justify-center gap-2">
                   <h3 className="text-4xl">
                     <PrismicText field={caseStudy.data.company} />
                   </h3>
@@ -61,21 +62,21 @@ const CaseStudies = async ({
                     <PrismicRichText field={caseStudy.data.description} />
                   </div>
 
-                  <PrismicNextLink
+                  <ButtonLink
                     document={caseStudy}
-                    className="after:absolute after:inset-0 hover:underline"
+                    className="after:absolute after:inset-0 "
                   >
-                    Découvrez davantage à propos de notre{" "}
+                    {/* Découvrez davantage à propos de notre{" "} */}
                     <PrismicText field={caseStudy.data.company} />
-                  </PrismicNextLink>
+                  </ButtonLink>
                 </div>
                 <PrismicNextImage
                   alt=""
                   field={caseStudy.data.logo_image}
                   quality={100}
-                  width={400}
-                  height={400}
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  width={1000}
+                  height={1000}
+                  // sizes="(max-width: 768px) 100vw, 50vw"
                   className={clsx(
                     "rounded-xl lg:col-span-2",
                     index % 2 && "md:-order-1"
